@@ -1,7 +1,11 @@
 .sg-header {
   color: red;
   &__title {
-    background: black;
+    background: green;
+    appearance: none;
+  }
+  &__sstitle {
+    background: orange;
     appearance: none;
   }
 }

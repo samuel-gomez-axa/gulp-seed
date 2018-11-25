@@ -1,4 +1,5 @@
 export default {
   pathSrc: './src',
-  pathDest: './dist'
+  pathDest: './dist',
+  pathImg: '/assets/images',
 };

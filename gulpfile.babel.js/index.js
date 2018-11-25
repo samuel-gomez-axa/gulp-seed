@@ -1,7 +1,8 @@
 import { series } from 'gulp';
 
 import js from './js';
-import style from './style';
+import sass from './sass';
 import pug from './pug';
+import images from './images';
 
-export default series(js, style);
+export default series(js, sass, pug, images);
