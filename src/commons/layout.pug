@@ -9,9 +9,9 @@ doctype html
 html(lang="fr",id=`${prefix}-${id}-html`)
 	head
 		link(rel="canonical" href=baseurl)
-		include ./includes/_meta
+		include ./includes/meta
 		block meta
-		include ./includes/_favicon.pug
+		include ./includes/favicon.pug
 		meta(name="description" content=metaDescription || description)
 		meta(name="keywords" content=metaKeywords || keywords)
 		title
@@ -24,6 +24,7 @@ html(lang="fr",id=`${prefix}-${id}-html`)
 	body(id=`${prefix}-${id}-body` class=browser)
 		.container
 			include ../components/header/index
+			p #{email} ok
 			block menu
 			block content
 			include ../components/footer/index
