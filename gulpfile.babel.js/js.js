@@ -1,11 +1,20 @@
+'use strict';
 import { src, dest } from 'gulp';
+import sourcemaps from 'gulp-sourcemaps';
 import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
+import concat from 'gulp-concat';
+
+import config from './config';
+const { pathSrc, pathDest } = config;
 
 const js = () =>
-  src('./src/**/*.js')
+  src(`${pathSrc}/**/*.js`)
+    .pipe(sourcemaps.init())
     .pipe(babel())
+    .pipe(concat('bundle.js'))
     .pipe(uglify())
-    .pipe(dest('dist'));
+    .pipe(sourcemaps.write())
+    .pipe(dest(pathDest));
 
 export default js;
