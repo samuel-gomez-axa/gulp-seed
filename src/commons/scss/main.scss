@@ -1,0 +1,9 @@
+.sg {
+  &-html {
+    font-size: $font-size-base;
+  }
+  &-body {
+    background: url('./assets/images/webcenter-min.jpg') no-repeat 0 0;
+    background-size: cover;
+  }
+}

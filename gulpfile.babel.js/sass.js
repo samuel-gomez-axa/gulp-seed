@@ -8,17 +8,40 @@ sass.compiler = require('node-sass');
 
 import { reload } from './serve';
 import config from './config';
-const { pathSrc, pathDest, sassFiles } = config;
+const { pathSrc, pathDest, sassIndex } = config;
 
-const sassTsk = () =>
-  src(`${pathSrc}${sassFiles}`)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+/* Production ******************************/
+export const sassBuild = () =>
+  src(`${pathSrc}${sassIndex}`)
+    .pipe(
+      sass({
+        includePaths: ['node_modules']
+      }).on('error', sass.logError)
+    )
     .pipe(
       autoprefixer({
         browsers: ['last 2 versions'],
-        cascade: false,
-      }),
+        cascade: false
+      })
+    )
+    .pipe(minifyCSS())
+    .pipe(concat('bundle.css'))
+    .pipe(dest(pathDest));
+
+/* Development ******************************/
+const sassDev = () =>
+  src(`${pathSrc}${sassIndex}`)
+    .pipe(sourcemaps.init())
+    .pipe(
+      sass({
+        includePaths: ['node_modules']
+      }).on('error', sass.logError)
+    )
+    .pipe(
+      autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      })
     )
     .pipe(minifyCSS())
     .pipe(concat('bundle.css'))
@@ -26,4 +49,4 @@ const sassTsk = () =>
     .pipe(dest(pathDest))
     .pipe(reload({ stream: true }));
 
-export default sassTsk;
+export default sassDev;

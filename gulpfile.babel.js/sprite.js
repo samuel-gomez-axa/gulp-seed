@@ -1,30 +1,23 @@
-import { src, dest } from 'gulp';
+import { src, dest, series } from 'gulp';
 import svgSprite from 'gulp-svg-sprite';
 import { reload } from './serve';
 import config from './config';
-const { pathSrc, pathDest, pathSvg, svgFiles } = config;
+const { pathSrc, pathSvg, svgFiles, pathSprite } = config;
 
 const sprite = () =>
   src(`${pathSrc}${pathSvg}${svgFiles}`)
     .pipe(
       svgSprite({
-        shape: {
-          dimension: {
-            maxWidth: 32,
-            maxHeight: 32,
-          },
-        },
         mode: {
-          view: {
-            dest: 'sprite',
-            render: {
-              scss: true,
-            },
-          },
-        },
-      }),
+          symbol: {
+            dest: `.`,
+            sprite: `sprite.svg`,
+            example: true
+          }
+        }
+      })
     )
-    .pipe(dest(`${pathSrc}/assets`))
+    .pipe(dest(`${pathSrc}${pathSprite}`))
     .pipe(reload({ stream: true }));
 
 export default sprite;

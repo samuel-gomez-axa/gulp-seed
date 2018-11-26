@@ -3,10 +3,12 @@ block vars
 	- const {title, author, geography, copyright, email, description, keywords, lang} = general
 	- const {prefix, baseurl,imagespath} = base
 
-include ../components/menu/index
+include ../components/menu/menu
+include ../components/icon/icon
+include ../components/title/title
 
 doctype html
-html(lang="fr",id=`${prefix}-${id}-html`)
+html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
 	head
 		link(rel="canonical" href=baseurl)
 		include ./includes/meta
@@ -21,12 +23,13 @@ html(lang="fr",id=`${prefix}-${id}-html`)
 		link(href=`${basedir}bundle.css` rel="stylesheet" type='text/css')
 		style
 			block style		
-	body(id=`${prefix}-${id}-body` class=browser)
+	body(id=`${prefix}-${id}-body` class=`${browser} ${prefix}-body`)
 		.container
-			include ../components/header/index
+			include ../components/header/header
 			p #{email} ok
 			block menu
 			block content
-			include ../components/footer/index
+			include ../components/footer/footer
+		include ../assets/sprite/sprite.svg
 		script(src=`${basedir}bundle.js`)
 		block scriptPage
