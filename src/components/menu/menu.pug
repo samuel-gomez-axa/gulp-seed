@@ -1,7 +1,7 @@
-mixin mainnav(active)
-	nav.sg-menu
-		ul.sg-menu-list
-			each item in listmenu[0].links
-				li(class="#{active==item.href ? 'sg-menu-item--active' : 'sg-menu-item'} #{item.modifier}")
-					a(href=item.href,title=item.title,class= "sg-menu-lnk")
-						| #{item.label}
+include ./menuitem
+mixin menu({activeHref, modifier=''})
+	nav(class=`${prefix}-menu${modifier !== '' ? ` ${prefix}-menu--${modifier}` : ''}`)
+		ul(class=`${prefix}-menu__list`)
+			each item in items
+				+menuitem({active: activeHref===item.href, href: item.href, title: item.title, label: item.label})
+				

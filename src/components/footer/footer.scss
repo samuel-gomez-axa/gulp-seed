@@ -1,5 +1,6 @@
 .sg-footer {
-  &__title {
-    background: orange;
-  }
+  background: $color-azur;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }

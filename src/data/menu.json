@@ -1,45 +1,50 @@
 {
-	
-	"items":[
-		{
-			"label":"Accueil",
-			"lnk":"/",
-			"title":"Retour à l'accueil",
-			"className":"sg-menu-home"
-		},
-		{
-				"label":"Projets",
-				"lnk":"/projets",
-				"title":"Liste des projets",
-				"className":"sg-menu-prjs"
-		},
-		{
-				"label":"Me contacter",
-				"lnk":"/forms/contacter-samuel-gomez",
-				"title":"Contacter Samuel Gomez, Développeur Web",
-				"className":"sg-menu-cont"
-		}
-	],
+  "items": [
+    {
+      "label": "Axa Web Center",
+      "href": "/",
+      "title": "Axa Web Center"
+    },
+    {
+      "label": "Open Source",
+      "href": "#open-source",
+      "title": "Liste des projets"
+    },
+    {
+      "label": "React Toolkit",
+      "href": "#react-toolkit",
+      "title": "React Toolkit"
+    },
+    {
+      "label": "React OICD",
+      "href": "#react-oidc",
+      "title": "React OICD"
+    },
+    {
+      "label": "Contributeurs",
+      "href": "#contributeurs",
+      "title": "Contributeurs"
+    }
+  ],
 
-	"socials":[
-		{
-			"label":"Google+",
-			"lnk":"https://plus.google.com/104180134865994577750",
-			"title":"Voir mon Google +",
-			"className":"sg-menu-googleplus"
-		},
-		{
-				"label":"Viadeo",
-				"lnk":"http://fr.viadeo.com/fr/profile/samuel.gomez",
-				"title":"Voir mon Viadeo",
-				"className":"sg-menu-viadeo"
-		},
-		{
-				"label":"Linkedin",
-				"lnk":"https://fr.linkedin.com/in/samuel-gomez-31654283",
-				"title":"Voir mon Linkedin",
-				"className":"sg-menu-linkedin"
-		}
-	]
-	
+  "socials": [
+    {
+      "label": "Google+",
+      "lnk": "https://plus.google.com/104180134865994577750",
+      "title": "Voir mon Google +",
+      "className": "sg-menu-googleplus"
+    },
+    {
+      "label": "Viadeo",
+      "lnk": "http://fr.viadeo.com/fr/profile/samuel.gomez",
+      "title": "Voir mon Viadeo",
+      "className": "sg-menu-viadeo"
+    },
+    {
+      "label": "Linkedin",
+      "lnk": "https://fr.linkedin.com/in/samuel-gomez-31654283",
+      "title": "Voir mon Linkedin",
+      "className": "sg-menu-linkedin"
+    }
+  ]
 }

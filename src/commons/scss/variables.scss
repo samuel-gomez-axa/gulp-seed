@@ -1,9 +1,10 @@
 /* Font */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
-$font-family-base: -apple-system, BlinkMacSystemFont, 'Open sans', Roboto,
-  Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !default;
-$font-family-headings: 'Times New Roman', Times, serif;
+$font-family-base: 'Open Sans', sans-serif !default;
+$font-family-headings: 'Times New Roman', Times, serif !default;
 $font-size-base: 1.6rem !default;
 
 /* Colors */
 $color-axa: #00008f !default;
+$color-azur: #3032c1 !default;
+$white: #fff !default;
+$black: #000 !default;
