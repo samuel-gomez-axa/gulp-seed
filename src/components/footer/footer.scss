@@ -1,6 +1,8 @@
-.sg-footer {
-  background: $color-azur;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+.#{$prefix} {
+  &-footer {
+    background: $color-azur;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
 }

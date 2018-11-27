@@ -43,7 +43,6 @@ const sassDev = () =>
         cascade: false
       })
     )
-    .pipe(minifyCSS())
     .pipe(concat('bundle.css'))
     .pipe(sourcemaps.write())
     .pipe(dest(pathDest))
