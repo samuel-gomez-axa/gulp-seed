@@ -4,5 +4,12 @@
     position: fixed;
     width: 100%;
     bottom: 0;
+    padding: 0.2em 1em;
+  }
+  &-icon {
+    &--footer {
+      width: 25px;
+      height: 25px;
+    }
   }
 }

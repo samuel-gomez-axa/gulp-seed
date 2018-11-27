@@ -11,8 +11,11 @@
 
 /* Atomes */
 @import './components/title/title';
-@import './components/footer/footer';
+@import './components/icon/icon';
+@import './components/more/more';
 
 /* Molecules */
 @import './components/header/header';
+@import './components/footer/footer';
 @import './components/menu/menu';
+@import './components/repo/repo';

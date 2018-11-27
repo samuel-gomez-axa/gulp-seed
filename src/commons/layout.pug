@@ -8,6 +8,8 @@ include ../components/menu/menu
 include ../components/icon/icon
 include ../components/title/title
 include ../components/img/img
+include ../components/more/more
+include ../components/repo/repo
 
 doctype html
 html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
@@ -26,9 +28,9 @@ html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
 		link(href=`${basedir}bundle.css` rel="stylesheet" type='text/css')
 		style
 			block style		
-	body(id=`${prefix}-${id}-body` class=`${browser} ${prefix}-body`)
+	body(id=`${prefix}-${id}-body` class=`${prefix}-body`)
 		div(class=`${prefix}-container`)
-			include ../components/header/header			
+			include ../components/header/header				
 			block menu
 			block content
 			include ../components/footer/footer
