@@ -1,12 +1,14 @@
 /*************************************************/
-/* Import Knacss *********************************/
+/* Import Normalize ******************************/
 /*************************************************/
 @import 'normalize-scss/sass/normalize/import-now';
-@import './commons/scss/variables';
 
 /*************************************************/
 /* Import components *****************************/
 /*************************************************/
+/* Commons */
+@import './commons/scss/mixins';
+@import './commons/scss/variables';
 @import './commons/scss/main.scss';
 
 /* Atomes */
@@ -19,3 +21,6 @@
 @import './components/footer/footer';
 @import './components/menu/menu';
 @import './components/repo/repo';
+
+/* Organism */
+@import './components/slider/slider';
