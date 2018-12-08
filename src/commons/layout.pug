@@ -1,8 +1,8 @@
 block vars	
-	- const id = "home"
-	- const {title, author, geography, copyright, email, description, keywords, lang} = general
-	- const {prefix, baseurl,pathImg} = base
-	- const {items} = menu
+	-const id = "home"
+	-const {title, author, geography, copyright, email, description, keywords, lang} = general
+	-const {prefix, baseurl,pathImg} = base
+	-const {items} = menu
 
 include ../components/menu/menu
 include ../components/icon/icon
@@ -26,7 +26,7 @@ html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
 		<!--[if lte IE 8]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet")
 		link(rel="shortcut icon" href="img/favicon.ico")
-		link(href=`${basedir}bundle.css` rel="stylesheet" type='text/css')
+		link(href=`${basedir}bundle.css` rel="stylesheet" type="text/css")
 		style
 			block style		
 	body(id=`${prefix}-${id}-body` class=`${prefix}-body`)

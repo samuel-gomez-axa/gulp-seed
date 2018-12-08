@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:pug": "pug-lint ./src",
+    "lint:scss": "stylelint \"src/**/*.scss\" --formatter \"verbose\" --max-warnings 96 --fix"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,9 @@
     "gulplog": "^1.0.0",
     "node-fetch": "^2.3.0",
     "node-sass": "^4.10.0",
+    "pug-lint": "^2.5.0",
+    "stylelint": "^9.9.0",
+    "stylelint-config-standard": "^18.2.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.0"

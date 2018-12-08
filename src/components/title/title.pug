@@ -1,4 +1,3 @@
 mixin Title({level = 'h1', modifier = ''})
   #{level}(class=`${prefix}-title${modifier !== '' ? ` ${prefix}-title--${modifier}` : ''}`)
-    if block
-      block
+    block

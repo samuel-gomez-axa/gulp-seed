@@ -4,21 +4,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4em;
+    padding: .4em;
     overflow: hidden;
+
     &:hover {
-      transition: all 0.3s linear;
+      transition: all .3s linear;
       background: $color-azur;
+
       .#{$prefix} {
         &-icon {
-          animation: moreIcon 0.3s linear;
+          animation: moreIcon .3s linear;
         }
       }
     }
+
     &:focus {
       box-shadow: 0 0 0 3px $color-azur;
     }
   }
+
   &-icon {
     &--more {
       width: 30px;
@@ -29,15 +33,18 @@
 
 @keyframes moreIcon {
   0% {
-    transform: translateX(0px);
+    transform: translateX(0);
   }
+
   50% {
     transform: translateX(50px);
   }
+
   51% {
     transform: translateX(-50px);
   }
+
   100% {
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }

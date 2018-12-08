@@ -1,7 +1,6 @@
 include ./menuitem
-mixin menu({activeHref, modifier=''})
-	nav(class=`${prefix}-menu${modifier !== '' ? ` ${prefix}-menu--${modifier}` : ''}`)
+mixin menu({activeHref, modifier=""})
+	nav(class=`${prefix}-menu${modifier !== "" ? ` ${prefix}-menu--${modifier}` : ""}`)
 		ul(class=`${prefix}-menu__list`)
 			each item in items
 				+menuitem({active: activeHref===item.href, href: item.href, title: item.title, label: item.label})
-				
