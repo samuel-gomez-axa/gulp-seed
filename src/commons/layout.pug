@@ -22,8 +22,8 @@ html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
 		meta(name="description" content=metaDescription || description)
 		meta(name="keywords" content=metaKeywords || keywords)
 		title
-			= metaTitle || title
-		<!--[if lte IE 8]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+			=metaTitle || title
+		//[if lte IE 8]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet")
 		link(rel="shortcut icon" href="img/favicon.ico")
 		link(href=`${basedir}bundle.css` rel="stylesheet" type="text/css")

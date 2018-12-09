@@ -11,7 +11,7 @@ module.exports = {
   "requireStrictEqualityOperators": true,
   "validateDivTags": true,
   "validateAttributeQuoteMarks": "\"",
-  "validateIndentation": 2,
+  "validateIndentation": 1,
   "validateAttributeSeparator": {
     "separator": " ",
     "multiLineSeparator": "\n  ",
