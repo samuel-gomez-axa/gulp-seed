@@ -1,5 +1,6 @@
 {
   "prefix": "sg",
+  "prefixjs": "js",
   "baseurl": "https://www.samuelgomez.fr",
   "pathImg": "./assets/images/"
 }

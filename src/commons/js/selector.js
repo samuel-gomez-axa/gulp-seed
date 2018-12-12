@@ -1,1 +1,1 @@
-export default selector => document.querySelector(selector);
+export default selector => document.querySelector(`.${selector}`);

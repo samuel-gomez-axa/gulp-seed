@@ -2,28 +2,21 @@
   "items": [
     {
       "label": "Axa Web Center",
-      "href": "/",
-      "title": "Axa Web Center"
+      "href": "https://www.axawebcenter.fr/",
+      "title": "Axa Web Center",
+      "target": "_blank"
     },
     {
-      "label": "Open Source",
-      "href": "#open-source",
-      "title": "Liste des projets"
+      "label": "Github",
+      "href": "https://github.com/AxaGuilDEv",
+      "title": "Axa Open Source",
+      "target": "_blank"
     },
     {
-      "label": "React Toolkit",
-      "href": "#react-toolkit",
-      "title": "React Toolkit"
-    },
-    {
-      "label": "React OICD",
-      "href": "#react-oidc",
-      "title": "React OICD"
-    },
-    {
-      "label": "Contributeurs",
-      "href": "#contributeurs",
-      "title": "Contributeurs"
+      "label": "Blog",
+      "href": "https://blog.axawebcenter.fr/",
+      "title": "Blog Axa Web Center",
+      "target": "_blank"
     }
   ],
 

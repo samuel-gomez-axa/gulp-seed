@@ -4,6 +4,7 @@
     "@babel/plugin-transform-modules-commonjs",
     "@babel/plugin-transform-runtime",
     "@babel/plugin-proposal-class-properties",
-    "babel-plugin-transform-imports"
+    "babel-plugin-transform-imports",
+    "@babel/plugin-transform-destructuring"
   ]
 }

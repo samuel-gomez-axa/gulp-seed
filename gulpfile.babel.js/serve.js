@@ -1,13 +1,14 @@
 import { watch, series } from 'gulp';
 import { create } from 'browser-sync';
-let browserSync = create();
-export const reload = browserSync.reload;
 import sass from './sass';
 import js from './js';
 import pug from './pug';
 import sprite from './sprite';
-
 import config from './config';
+
+const browserSync = create();
+export const { reload, notify } = browserSync;
+
 const {
   pathDest,
   pathSrc,

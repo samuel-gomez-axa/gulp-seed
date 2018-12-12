@@ -9,15 +9,32 @@ import log from 'gulplog';
 import uglify from 'gulp-uglify';
 import { reload } from './serve';
 import config from './config';
+
 const { pathSrc, pathDest } = config;
 
+/* Production ***************************** */
+export const jsProd = () => {
+  const b = browserify({
+    entries: `${pathSrc}/index.js`,
+    debug: true,
+  });
 
-export const js = () => {
-  var b = watchify(
+  return b
+    .transform(babelify, { presets: ['@babel/preset-env'] })
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(dest(`${pathDest}`));
+};
+
+/* Development ***************************** */
+const jsDev = () => {
+  const b = watchify(
     browserify({
       entries: `${pathSrc}/index.js`,
-      debug: true
-    })
+      debug: true,
+    }),
   );
 
   return b
@@ -33,4 +50,4 @@ export const js = () => {
     .pipe(reload({ stream: true }));
 };
 
-export default series(js);
+export default jsDev;

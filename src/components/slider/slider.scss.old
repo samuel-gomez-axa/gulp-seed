@@ -1,0 +1,67 @@
+$height: 80vh;
+$width: 100vw;
+
+.#{$prefix} {
+  &-slider {
+    &__list {
+      height: $height;
+      @include hcenterer;
+      position: relative;
+      list-style-type: none;
+      padding: 0;
+
+      &-item {
+        width: $width/3;
+        height: 100%;
+        opacity: .25;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) scale(1);
+        border-radius: 2px;
+        background: $red-axa;
+        transition: transform 1s, opacity 1s;
+
+        &--act {
+          opacity: 1;
+        }
+
+        &--next,
+        &--prev {
+          cursor: pointer;
+          background: yellow;
+        }
+
+        &--hide,
+        &--new-next {
+          opacity: 0;
+          transition: opacity .5s, transform .5s;
+        }
+
+        &--hide {
+          transform: translateX(-200%) scale(.85);
+        }
+
+        &--prev {
+          transform: translateX(-150%) scale(.85);
+        }
+
+        &--next {
+          transform: translateX(50%) scale(.85);
+        }
+
+        &--new-next {
+          transform: translateX(100%) scale(.85);
+        }
+      }
+    }
+
+    &__swipe {
+      @include centerer;
+      width: $width/3;
+      height: $height;
+      background-color: green;
+      border-radius: 2px;
+      opacity: 0;
+    }
+  }
+}

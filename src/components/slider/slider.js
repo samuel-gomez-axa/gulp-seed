@@ -1,26 +1,48 @@
-// import Hammer from 'hammerjs';
+import {lory} from 'lory.js';
 import $ from '../../commons/js/selector';
 
-const classSliderList = '.sg-slider__list';
-// const classHide = '.sg-slider__list-item--hide';
-// const classAct = '.sg-slider__list-item--act';
-// const classPrev = '.sg-slider__list-item--prev';
-// const classNext = '.sg-slider__list-item--next';
-const classSwipe = '.sg-slider__swipe';
+const defaultClass = {
+  classSlider: 'js-slider',
+  classNameFrame : 'js-slider__frame',
+  classNameSlideContainer : 'js-slider__list',
+  classSliderListItem : 'js-slider__list-item',
+  classNamePrevCtrl: 'js-slider__prev',
+  classNameNextCtrl: 'js-slider__next',
+  classNameActiveSlide: 'js-slider__list-item--active'
+}
+
+const defaultOptions = {
+  infinite: 1,
+  enableMouseEvents: true
+}
 
 class Slider {
-  isNotExitingElements() {
-    return !this.slider || !this.swipe;
+  constructor(options = {}, classOptions = {}){
+    const newClassOptions = Object.assign(defaultClass, classOptions);
+    const { classSlider, classNameFrame, classNameSlideContainer, classNamePrevCtrl, classNameNextCtrl, classNameActiveSlide} = newClassOptions;
+    const optionsSelectors = {
+      classNameFrame,
+      classNameSlideContainer,
+      classNamePrevCtrl,
+      classNameNextCtrl,
+      classNameActiveSlide
+    }
+    const optionsSlider = Object.assign(defaultOptions, optionsSelectors, options);
+    this.slider = $(classSlider);
+    this.optionsSlider = optionsSlider;
   }
 
   init() {
-    this.slider = $(classSliderList);
-    this.swipe = $(classSwipe);
-    if (this.isNotExitingElements()) {
+    if (this.isNotExitingElement()) {
       return;
     }
-    console.log('Ok launch SLIDER v2');
+    lory(this.slider, this.optionsSlider);
   }
+
+  isNotExitingElement() {
+    return !this.slider;
+  }
+
 }
 
 export default Slider;
