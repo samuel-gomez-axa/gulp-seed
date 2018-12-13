@@ -5,6 +5,8 @@
     "@babel/plugin-transform-runtime",
     "@babel/plugin-proposal-class-properties",
     "babel-plugin-transform-imports",
-    "@babel/plugin-transform-destructuring"
+    "@babel/plugin-transform-destructuring",
+    "@babel/plugin-proposal-async-generator-functions",
+    "@babel/plugin-transform-async-to-generator"
   ]
 }

@@ -1,0 +1,21 @@
+branches:
+  only:
+    - master
+sudo: required
+dist: trusty
+language: node_js
+env:
+  - NPM_PUBLISH_VERSION=none
+node_js:
+  - '10'
+install:
+  - npm install
+script:
+  - npm run build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
