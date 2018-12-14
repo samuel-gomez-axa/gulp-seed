@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp",
+    "start": "gulp dev",
+    "build": "gulp build",
+    "deploy": "npm run build && serve -s dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "run-s lint:**",
     "lint:js": "eslint ./src --fix",
