@@ -37,15 +37,15 @@ const pugTsk = async () => {
   const repos = await getRepos();
 
   const contributorsByRepo = await Promise.all(
-    repos.map(async ({ name }) => ({
-      name,
+    repos.map(async ({ name, id }) => ({
+      id,
       users: await getContributors(name),
     })),
   );
 
   const tagsByRepo = await Promise.all(
-    repos.map(async ({ name }) => ({
-      name,
+    repos.map(async ({ name, id }) => ({
+      id,
       users: await getTags(name),
     })),
   );
