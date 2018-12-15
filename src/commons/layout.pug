@@ -11,6 +11,8 @@ include ../components/img/img
 include ../components/more/more
 include ../components/repo/repo
 include ../components/slider/slider
+include ../components/contributors/contributors
+include ../components/contributors/contributorTmpl
 
 doctype html
 html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
@@ -38,3 +40,4 @@ html(lang=lang id=`${prefix}-${id}-html` class=`${prefix}-html`)
 		include ../assets/sprite/sprite.svg
 		script(src=`${basedir}bundle.js`)
 		block scriptPage
+		block template

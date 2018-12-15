@@ -1,7 +1,10 @@
 import Slider from './components/slider/slider';
+import Contributors from './components/contributors/contributors';
 
-const slider = new Slider();
+const contributors = new Contributors();
+const slider = new Slider(contributors);
 
 document.addEventListener('DOMContentLoaded', () => {
   slider.init();
+  contributors.init();
 });

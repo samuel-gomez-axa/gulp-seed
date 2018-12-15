@@ -2,7 +2,6 @@ import { src, dest } from 'gulp';
 import pug from 'gulp-pug';
 import fs from 'fs';
 import fetch from 'node-fetch';
-import co from 'co';
 import { reload } from './serve';
 import config from './config';
 
