@@ -1,23 +1,9 @@
 import { lory } from 'lory.js';
 import $ from '../../commons/js/selector';
-
-const defaultClass = {
-  classSlider: 'js-slider',
-  classNameFrame: 'js-slider__frame',
-  classNameSlideContainer: 'js-slider__list',
-  classSliderListItem: 'js-slider__list-item',
-  classNamePrevCtrl: 'js-slider__prev',
-  classNameNextCtrl: 'js-slider__next',
-  classNameActiveSlide: 'js-slider__list-item--active',
-};
-
-const defaultOptions = {
-  infinite: 1,
-  enableMouseEvents: true,
-};
+import { defaultClass, defaultOptions, eventsLory } from './slider.contants';
 
 class Slider {
-  constructor(contributors, options = {}, classOptions = {}) {
+  constructor(contributors = {}, options = {}, classOptions = {}) {
     const newClassOptions = Object.assign(defaultClass, classOptions);
     const {
       classSlider,
@@ -44,8 +30,14 @@ class Slider {
     if (this.isNotExitingElement()) {
       return;
     }
-    this.slider.addEventListener('after.lory.slide', () => this.updateContributors());
+    if (this.hasContributors()) {
+      this.slider.addEventListener(eventsLory.afterSlide, () => this.updateContributors());
+    }
     lory(this.slider, this.optionsSlider);
+  }
+
+  hasContributors() {
+    return this.contributors;
   }
 
   isNotExitingElement() {

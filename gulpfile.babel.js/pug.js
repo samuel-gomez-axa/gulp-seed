@@ -4,6 +4,7 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import { reload } from './serve';
 import config from './config';
+import modifierFn from '../src/commons/js/modifier';
 
 global.fetch = fetch;
 
@@ -58,6 +59,7 @@ const pugTsk = async () => {
     menu,
     home,
     basedir,
+    functions: { modifierFn },
   };
 
   return src(`${pathSrc}${pugFiles}`)

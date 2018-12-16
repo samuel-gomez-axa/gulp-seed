@@ -50,10 +50,10 @@ class Contributors {
     this.template = $(templateClass);
   }
 
-  fetchContributors() {
+  async fetchContributors() {
     return fetch(`${apiUrl}${this.activeRepo}/contributors`)
       .then(res => res.json())
-      .catch(() => console.log('failed'));
+      .catch(() => console.log('failed fetch contributors'));
   }
 }
 

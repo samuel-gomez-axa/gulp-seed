@@ -1,5 +1,5 @@
 mixin Repo({ homepage="/", version="0.0.0", modifier="", stars="0", icon="coding", title="Repository Title", desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta natus eum consequuntur assumenda. Voluptatum..."})
-	div(class=`${prefix}-repo${modifier !== "" ? ` ${prefix}-repo--${modifier}` : ""}`)
+	div(class=`${prefix}-repo${modifier !== "" ? ` ${prefix}-repo--${modifier}` : ""} ${prefixjs}-repo`)
 		+Icon({id:"slash", modifier:"repo-slash"})
 		div(class=`${prefix}-repo__info`)
 			+Title({level:"h3", modifier:"repo-version"})
@@ -14,5 +14,5 @@ mixin Repo({ homepage="/", version="0.0.0", modifier="", stars="0", icon="coding
 		div(class=`${prefix}-repo__text`)
 			+Title({level:"h1", modifier:"repo-title"})
 				| #{title}
-			p(class=`${prefix}-repo__intro`)
+			p(class=`${prefix}-repo__intro ${prefixjs}-repo__intro`)
 				| !{desc}

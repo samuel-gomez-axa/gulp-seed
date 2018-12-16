@@ -1,10 +1,7 @@
-import Slider from './components/slider/slider';
-import Contributors from './components/contributors/contributors';
+import Slides from './components/slider/slides';
 
-const contributors = new Contributors();
-const slider = new Slider(contributors);
+const slides = new Slides();
 
 document.addEventListener('DOMContentLoaded', () => {
-  slider.init();
-  contributors.init();
+  slides.synchronize();
 });
