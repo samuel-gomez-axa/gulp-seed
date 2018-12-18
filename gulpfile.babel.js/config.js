@@ -2,6 +2,8 @@ export default {
   pathSrc: './src',
   pathDest: './dist',
   pathImg: '/assets/images',
+  pathImgDist: '/assets',
+  pathFavicons: '/assets/favicons',
   jsFiles: '/**/*.js',
   sassIndex: '/index.scss',
   sassFiles: '/**/*.scss',
@@ -10,5 +12,5 @@ export default {
   jsonFiles: '/data/*.json',
   pathSvg: '/assets/icons',
   svgFiles: '/*.svg',
-  pathSprite: '/assets/sprite'
+  pathSprite: '/assets/sprite',
 };

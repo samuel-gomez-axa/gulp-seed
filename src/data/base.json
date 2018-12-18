@@ -2,5 +2,6 @@
   "prefix": "sg",
   "prefixjs": "js",
   "baseurl": "https://gulp-seed-axa.netlify.com/",
-  "pathImg": "./assets/images/"
+  "pathImg": "./assets/images/",
+  "pathFavicons": "./assets/favicons/"
 }
