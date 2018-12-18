@@ -1,6 +1,6 @@
 {
   "prefix": "sg",
   "prefixjs": "js",
-  "baseurl": "https://www.samuelgomez.fr",
+  "baseurl": "https://gulp-seed-axa.netlify.com/",
   "pathImg": "./assets/images/"
 }

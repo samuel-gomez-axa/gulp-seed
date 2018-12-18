@@ -18,26 +18,5 @@
       "title": "Blog Axa Web Center",
       "target": "_blank"
     }
-  ],
-
-  "socials": [
-    {
-      "label": "Google+",
-      "lnk": "https://plus.google.com/104180134865994577750",
-      "title": "Voir mon Google +",
-      "className": "sg-menu-googleplus"
-    },
-    {
-      "label": "Viadeo",
-      "lnk": "http://fr.viadeo.com/fr/profile/samuel.gomez",
-      "title": "Voir mon Viadeo",
-      "className": "sg-menu-viadeo"
-    },
-    {
-      "label": "Linkedin",
-      "lnk": "https://fr.linkedin.com/in/samuel-gomez-31654283",
-      "title": "Voir mon Linkedin",
-      "className": "sg-menu-linkedin"
-    }
   ]
 }
