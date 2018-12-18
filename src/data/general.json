@@ -1,10 +1,11 @@
 {
-  "author": "Samuel Gomez",
-  "title": "Axaguildev Lead Front-end à Lille, France",
+  "author": "Axaguildev",
+  "title": "Axaguildev OpenSource Axa at Lille, France",
   "geography": "Lille, France, 59000",
   "lang": "fr",
   "email": "samuel.gomez@axa.fr",
   "copyright": "2018 Axaguildev",
-  "description": "Axaguildev Développeur Web et Développeur Front-End et Back-end PHP, Nodejs à Lille. Développement de SPA avec Angularjs, Vuejs, Backbonejs ou Reactjs",
-  "keywords": "Axaguildev,Développeur Web,Développeur Front-End, développeur PHP, développeur nodejs, développeur angularjs,développeur angular, développeur Backbonejs , développeur react, développeur reactjs"
+  "description": "Axaguildev OpenSource Axa Front-End et Back-end, Nodejs React à Lille.",
+  "keywords": "Axaguildev, Open Source,Open source Axa, Axa France",
+  "avatar": "axa.svg"
 }

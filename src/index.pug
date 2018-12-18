@@ -1,9 +1,9 @@
 extends ./commons/layout
-
 block meta
-	-var metaTitle = "home metatitle"
-	-var metaDescription = "home metadesc"
-	-var metaKeywords = "home keywords"
+	-const { metatitle, metadescription, metakeywords } = home
+	-var metaTitle = metatitle
+	-var metaDescription = metadescription
+	-var metaKeywords = metakeywords
 block content
 	+Slider({items:repos})
 	+Contributors({})
