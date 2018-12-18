@@ -1,5 +1,7 @@
 import $ from '../../commons/js/selector';
+import fetchJson from '../../commons/js/fetchJson';
 import { defaultClass } from './slider.contants';
+import { apiRepos, apiByType } from '../github/github';
 
 import Slider from './slider';
 import Contributors from '../contributors/contributors';
@@ -7,24 +9,62 @@ import Contributors from '../contributors/contributors';
 const contributors = new Contributors();
 const slider = new Slider(contributors);
 
-const apiUrl = 'https://api.github.com/users/axaguildev/repos';
-
 const { classRepository, classNameSlideContainer, templateClass } = defaultClass;
+const setTextContent = cloneTemplate => (className, content) => {
+  const cloneElt = cloneTemplate.querySelector(`.${className}`);
+  cloneElt.textContent = `${content}`;
+};
 
-const fetchRepos = async () => fetch(`${apiUrl}`)
-  .then(res => res.json())
-  .catch(() => console.log('failed'));
+const isToolkitReactRepository = repository => repository.name === 'react-toolkit';
+
+const createLink = (label, title, href, target = '_blank') => {
+  const link = document.createElement('a');
+  const linkText = document.createTextNode(label);
+  link.appendChild(linkText);
+  link.title = title;
+  link.href = href;
+  link.target = target;
+  link.className = 'sg-list__link';
+  return link;
+};
+
+const addDemosLinkForToolkitReact = (tags, cloneTemplate) => {
+  const listDemos = document.createElement('ul');
+  listDemos.className = 'sg-list';
+  tags.forEach((tag) => {
+    const itemList = document.createElement('li');
+    itemList.className = 'sg-list__item';
+    const itemLinkStorybook = createLink(
+      'React Storybook',
+      'See React Storybook',
+      `https://axaguildev.github.io/react-toolkit/storybook/${tag.name}/index.html`,
+    );
+    const itemLinkDesignSystem = createLink(
+      'Design System',
+      'See Design System',
+      `https://axaguildev.github.io/react-toolkit/design/${tag.name}/index.html`,
+    );
+    const itemListContent = document.createTextNode(`[${tag.name}]`);
+    itemList.appendChild(itemLinkDesignSystem);
+    itemList.appendChild(itemLinkStorybook);
+    itemList.appendChild(itemListContent);
+    listDemos.appendChild(itemList);
+  });
+  const cloneElt = cloneTemplate.querySelector(`.${classRepository.description}`);
+  cloneElt.appendChild(listDemos);
+};
 
 class Slides {
   synchronize() {
+    this.slidesNode = $(classNameSlideContainer);
     this.getCurrentActive();
     this.getRepos();
-    this.slidesNode = $(classNameSlideContainer);
   }
 
   getCurrentActive() {
     this.activeSlide = $(classRepository.item);
     this.activeId = Number(this.activeSlide.getAttribute('data-id'));
+    this.activeSlide.classList.add('sg-slider__list-item--synchronize');
   }
 
   clearSlidesNode() {
@@ -32,33 +72,47 @@ class Slides {
   }
 
   async getRepos() {
-    this.repositories = await fetchRepos();
+    this.repositories = await fetchJson(apiRepos);
     this.getTemplate();
     this.clearSlidesNode();
-    this.addRepos();
+    this.repositoriesSynchronized = await Promise.all(this.addRepos());
     slider.init();
     contributors.init();
   }
 
   addRepos() {
-    this.repositories.forEach((repository) => {
+    return this.repositories.map(async (repository) => {
       const cloneTemplate = document.importNode(this.template.content, true);
-      const cloneItem = cloneTemplate.querySelector(`.${classRepository.item}`);
-      if (this.isActiveRepository(repository.id)) {
-        cloneItem.classList.add(classRepository.itemActive);
+
+      setTextContent(cloneTemplate)(classRepository.description, repository.description);
+
+      const tags = await fetchJson(apiByType(repository.name)('tags'));
+      if (tags.length) {
+        setTextContent(cloneTemplate)(classRepository.version, tags[0].name);
       }
-      cloneItem.setAttribute('data-id', repository.id);
-      cloneItem.setAttribute('data-repo', repository.name);
-      const cloneTitle = cloneTemplate.querySelector(`.${classRepository.title}`);
-      const cloneStars = cloneTemplate.querySelector(`.${classRepository.stars}`);
-      const cloneDescription = cloneTemplate.querySelector(`.${classRepository.description}`);
+      if (isToolkitReactRepository(repository)) {
+        addDemosLinkForToolkitReact(tags, cloneTemplate);
+      }
+
+      this.setCloneItem(cloneTemplate, repository);
+      setTextContent(cloneTemplate)(classRepository.title, repository.name);
+      setTextContent(cloneTemplate)(classRepository.stars, repository.stargazers_count);
+
       const cloneMore = cloneTemplate.querySelector(`.${classRepository.more}`);
-      cloneTitle.textContent = `${repository.name}`;
-      cloneStars.textContent = repository.stargazers_count;
-      cloneDescription.textContent = repository.description;
       cloneMore.setAttribute('href', repository.homepage);
+
       this.slidesNode.appendChild(cloneTemplate);
+      return cloneTemplate;
     });
+  }
+
+  setCloneItem(cloneTemplate, repository) {
+    const cloneItem = cloneTemplate.querySelector(`.${classRepository.item}`);
+    if (this.isActiveRepository(repository.id)) {
+      cloneItem.classList.add(classRepository.itemActive);
+    }
+    cloneItem.setAttribute('data-id', `${repository.id}`);
+    cloneItem.setAttribute('data-repo', repository.name);
   }
 
   isActiveRepository(id) {

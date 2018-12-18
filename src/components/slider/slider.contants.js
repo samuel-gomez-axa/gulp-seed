@@ -22,6 +22,7 @@ const defaultOptions = {
   infinite: 1,
   enableMouseEvents: true,
 };
+
 const eventsLory = {
   beforeSlide: 'before.lory.slide',
   afterSlide: 'after.lory.slide',

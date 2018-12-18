@@ -5,6 +5,8 @@ import fetch from 'node-fetch';
 import { reload } from './serve';
 import config from './config';
 import modifierFn from '../src/commons/js/modifier';
+import fetchJson from '../src/commons/js/fetchJson';
+import { apiRepos, apiByType } from '../src/components/github/github';
 
 global.fetch = fetch;
 
@@ -12,20 +14,9 @@ const { pathSrc, pathDest, pugFiles } = config;
 
 const basedir = './';
 const baseData = './src/data/';
-const secretApp = '?client_id=1aa2d218b6767c22cd2a&client_secret=9762db2dfc39e0b0e8d9988b89ebe8ad0221488e';
 
-const fetchRepo = () => fetch(`https://api.github.com/users/axaguildev/repos${secretApp}`)
-  .then(res => res.json())
-  .catch(() => console.log('failed'));
-
-const fetchRepoApi = repo => type => fetch(`https://api.github.com/repos/AxaGuilDEv/${repo}/${type}${secretApp}`)
-  .then(res => res.json())
-  .catch(() => console.log('failed'));
-
-const getRepos = () => fetchRepo();
-const getContributors = name => fetchRepoApi(name)('contributors');
-const getTags = name => fetchRepoApi(name)('tags');
-
+const getRepos = () => fetchJson(apiRepos);
+const getContributors = name => fetchJson(apiByType(name)('contributors'));
 const getFileData = fileName => JSON.parse(fs.readFileSync(`${baseData}${fileName}.json`));
 
 const pugTsk = async () => {
@@ -33,9 +24,7 @@ const pugTsk = async () => {
   const general = getFileData('general');
   const menu = getFileData('menu');
   const home = getFileData('home');
-
   const repos = await getRepos();
-
   const contributorsByRepo = await Promise.all(
     repos.map(async ({ name, id }) => ({
       id,
@@ -43,16 +32,8 @@ const pugTsk = async () => {
     })),
   );
 
-  const tagsByRepo = await Promise.all(
-    repos.map(async ({ name, id }) => ({
-      id,
-      users: await getTags(name),
-    })),
-  );
-
   const data = {
     contributorsByRepo,
-    tagsByRepo,
     repos,
     base,
     general,
@@ -66,7 +47,7 @@ const pugTsk = async () => {
     .pipe(
       pug({
         locals: data,
-        pretty: true,
+        // pretty: true,
       }),
     )
     .pipe(dest(pathDest))

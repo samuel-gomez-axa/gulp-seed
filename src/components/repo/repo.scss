@@ -8,7 +8,6 @@
       left: 5vw;
       @include vcenterer;
       z-index: 2;
-      animation: inVersion 0.5s 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
 
     &__img {
@@ -18,7 +17,6 @@
     &__star {
       display: flex;
       align-items: center;
-      animation: inVersion 0.4s 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
 
     &__text {
@@ -34,7 +32,6 @@
       font-size: 1rem;
       text-indent: 1rem;
       text-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
-      animation: inDesc 0.5s 0.3s cubic-bezier(0.04, 1.2, 0.12, 1.06);
     }
   }
 
@@ -57,7 +54,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        animation: inSlash 0.5s 0.1s cubic-bezier(0.04, 1.2, 0.12, 1.06);
       }
     }
 
@@ -70,14 +66,13 @@
   &-title {
     &--repo-version {
       margin: 0 0 0.1em 0;
-      animation: inVersion 0.5s 0.1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
 
     &--repo-title {
       font-size: 3.5rem;
       text-indent: 2rem;
       text-shadow: -20px 10px 15px rgba(0, 0, 0, 0.5);
-      animation: inTitle 0.5s 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
       word-break: break-all;
       text-transform: capitalize;
     }
@@ -92,7 +87,42 @@
       transform-origin: 0 50%;
       box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.5);
       transform: rotateY(0deg);
-      animation: inMore 0.4s 0.3s linear;
+    }
+  }
+}
+
+.js-slider__list-item--active {
+  .#{$prefix} {
+    &-repo {
+      &__info {
+        animation: inVersion 0.5s 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      }
+      &__star {
+        animation: inVersion 0.4s 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      }
+      &__intro {
+        animation: inDesc 0.5s 0.3s cubic-bezier(0.04, 1.2, 0.12, 1.06);
+      }
+    }
+    &-icon {
+      &--repo {
+        &-slash {
+          animation: inSlash 0.5s 0.1s cubic-bezier(0.04, 1.2, 0.12, 1.06);
+        }
+      }
+    }
+    &-title {
+      &--repo-version {
+        animation: inVersion 0.5s 0.1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      }
+      &--repo-title {
+        animation: inTitle 0.5s 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      }
+    }
+    &-more {
+      &--repo {
+        animation: inMore 0.4s 0.3s linear;
+      }
     }
   }
 }
