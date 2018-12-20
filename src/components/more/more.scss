@@ -4,16 +4,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: .4em;
+    padding: 0.4em;
     overflow: hidden;
-
+    color: $white;
     &:hover {
-      transition: all .3s linear;
+      transition: all 0.3s linear;
       background: $color-azur;
 
       .#{$prefix} {
         &-icon {
-          animation: moreIcon .3s linear;
+          animation: moreIcon 0.3s linear;
         }
       }
     }

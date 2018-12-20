@@ -1,11 +1,12 @@
 import $ from '../../commons/js/selector';
+import { apiByType } from '../github/github';
+import fetchJson from '../../commons/js/fetchJson';
 
 const activeSlideClass = 'js-slider__list-item--active';
 const templateClass = 'js-contributorTmpl';
 const contributorsClass = 'js-contributors';
 const contributorNameClass = 'js-contributor__name';
 const contributorAvatarClass = 'js-contributor__avatar';
-const apiUrl = 'https://api.github.com/repos/AxaGuilDEv/';
 
 class Contributors {
   init() {
@@ -29,7 +30,7 @@ class Contributors {
 
   async getContributors() {
     this.loaderContributorsNode();
-    this.contributors = await this.fetchContributors();
+    this.contributors = await fetchJson(apiByType(this.activeRepo)('contributors'));
     this.clearContributorsNode();
     this.getTemplate();
     this.addContributors();
@@ -48,12 +49,6 @@ class Contributors {
 
   getTemplate() {
     this.template = $(templateClass);
-  }
-
-  async fetchContributors() {
-    return fetch(`${apiUrl}${this.activeRepo}/contributors`)
-      .then(res => res.json())
-      .catch(() => console.log('failed fetch contributors'));
   }
 }
 

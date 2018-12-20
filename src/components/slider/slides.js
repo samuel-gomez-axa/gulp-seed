@@ -2,6 +2,7 @@ import $ from '../../commons/js/selector';
 import fetchJson from '../../commons/js/fetchJson';
 import { defaultClass } from './slider.contants';
 import { apiRepos, apiByType } from '../github/github';
+import { prefix } from '../../data/base.json';
 
 import Slider from './slider';
 import Contributors from '../contributors/contributors';
@@ -24,16 +25,16 @@ const createLink = (label, title, href, target = '_blank') => {
   link.title = title;
   link.href = href;
   link.target = target;
-  link.className = 'sg-list__link';
+  link.className = `${prefix}-list__link`;
   return link;
 };
 
 const addDemosLinkForToolkitReact = (tags, cloneTemplate) => {
   const listDemos = document.createElement('ul');
-  listDemos.className = 'sg-list';
+  listDemos.className = `${prefix}-list`;
   tags.forEach((tag) => {
     const itemList = document.createElement('li');
-    itemList.className = 'sg-list__item';
+    itemList.className = `${prefix}-list__item`;
     const itemLinkStorybook = createLink(
       'React Storybook',
       'See React Storybook',
@@ -64,7 +65,7 @@ class Slides {
   getCurrentActive() {
     this.activeSlide = $(classRepository.item);
     this.activeId = Number(this.activeSlide.getAttribute('data-id'));
-    this.activeSlide.classList.add('sg-slider__list-item--synchronize');
+    this.activeSlide.classList.add(`${prefix}-slider__list-item--synchronize`);
   }
 
   clearSlidesNode() {
