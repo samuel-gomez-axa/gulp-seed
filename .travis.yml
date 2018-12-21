@@ -6,6 +6,9 @@ cache:
     - node_modules
 before_install:
   - npm prune
+before_script:
+  - git config --global user.email "build-ci@axa.fr"
+  - git config --global user.name "Build-CI"
 branches:
   only:
     - master
@@ -13,9 +16,3 @@ install:
   - npm install
 script:
   - npm run build
-deploy:
-  provider: pages
-  github-token: $GITHUB_TOKEN
-  skip-cleanup: true
-  keep-history: true
-  repo: samuel-gomez-axa/samuel-gomez-axa.github.io
