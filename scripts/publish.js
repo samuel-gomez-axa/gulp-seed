@@ -15,14 +15,14 @@ try {
     console.log('stdout ', child.stdout);
     console.log('stderr ', child.stderr);
 
-    fs.copySync(`./dist`, `./tmp/AxaGuilDEv.github.io/web/`);
+    fs.copySync(`./dist`, `./tmp/AxaGuilDEv.github.io/`);
 
     child = execSync(`cd ./tmp/AxaGuilDEv.github.io/ && git add . && git commit -m "static Website AxaGuildev publish" && git push`);
     console.log('error', child.error);
     console.log('stdout ', child.stdout);
     console.log('stderr ', child.stderr);
 
-    console.log('success!')
+    console.log('success!');
   } catch (err) {
-    console.error(err)
+    console.error(err);
   }
