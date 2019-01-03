@@ -18,6 +18,8 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
+    git config --global user.email "build-ci@axa.fr"
+    git config --global user.name "Build-CI"
     node ./scripts/publish.js $(Github.Token)
   displayName: 'publish website'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
