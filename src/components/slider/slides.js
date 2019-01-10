@@ -6,6 +6,7 @@ import { prefix } from '../../data/base.json';
 
 import Slider from './slider';
 import Contributors from '../contributors/contributors';
+import compare from '../../commons/js/compare';
 
 const contributors = new Contributors();
 const slider = new Slider(contributors);
@@ -74,6 +75,7 @@ class Slides {
 
   async getRepos() {
     this.repositories = await fetchJson(apiRepos);
+    this.repositories.sort(compare('stargazers_count')).reverse();
     this.getTemplate();
     this.clearSlidesNode();
     this.repositoriesSynchronized = await Promise.all(this.addRepos());
