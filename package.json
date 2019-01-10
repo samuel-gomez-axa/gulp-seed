@@ -1,5 +1,5 @@
 {
-  "name": "gulp-seed",
+  "name": "static-website-axaguildev",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samuel-gomez-axa/gulp-seed.git"
+    "url": "git+https://github.com/AxaGuilDEv/static-website-axaguildev.git"
   },
   "author": "Samuel Gomez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/samuel-gomez-axa/gulp-seed/issues"
+    "url": "https://github.com/AxaGuilDEv/static-website-axaguildev/issues"
   },
   "homepage": "https://github.com/samuel-gomez-axa/gulp-seed#readme",
   "devDependencies": {

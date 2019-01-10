@@ -6,6 +6,7 @@ import { reload } from './serve';
 import config from './config';
 import modifierFn from '../src/commons/js/modifier';
 import fetchJson from '../src/commons/js/fetchJson';
+import compare from '../src/commons/js/compare';
 import { apiRepos, apiByType } from '../src/components/github/github';
 
 global.fetch = fetch;
@@ -25,6 +26,7 @@ const pugTsk = async () => {
   const menu = getFileData('menu');
   const home = getFileData('home');
   const repos = await getRepos();
+  repos.sort(compare('stargazers_count')).reverse();
   const contributorsByRepo = await Promise.all(
     repos.map(async ({ name, id }) => ({
       id,

@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/samuel-gomez-axa/presentation-toolkit.svg?branch=master)](https://travis-ci.com/samuel-gomez-axa/presentation-toolkit)
-
 # Stack Gulp
 
 ![](https://gulp-seed-axa.netlify.com/assets/images/webcenter.jpg)
