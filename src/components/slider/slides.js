@@ -33,22 +33,35 @@ const createLink = (label, title, href, target = '_blank') => {
 const addDemosLinkForToolkitReact = (tags, cloneTemplate) => {
   const listDemos = document.createElement('ul');
   listDemos.className = `${prefix}-list`;
-  tags.forEach((tag) => {
+
+  tags.forEach((tag, index) => {
     const itemList = document.createElement('li');
     itemList.className = `${prefix}-list__item`;
+
+    let tagName = tag.name;
+    if (index === 0) {
+      tagName = 'latest';
+    }
+
     const itemLinkStorybook = createLink(
       'React Storybook',
       'See React Storybook',
-      `https://axaguildev.github.io/react-toolkit/storybook/${tag.name}/index.html`,
+      `https://axaguildev.github.io/react-toolkit/${tagName}/storybook/index.html`,
     );
     const itemLinkDesignSystem = createLink(
       'Design System',
       'See Design System',
-      `https://axaguildev.github.io/react-toolkit/design/${tag.name}/index.html`,
+      `https://axaguildev.github.io/react-toolkit/${tagName}/design/index.html`,
+    );
+    const itemLinkDemo = createLink(
+      'Demo',
+      'See Demo',
+      `https://axaguildev.github.io/react-toolkit/${tagName}/demo/index.html`,
     );
     const itemListContent = document.createTextNode(`[${tag.name}]`);
     itemList.appendChild(itemLinkDesignSystem);
     itemList.appendChild(itemLinkStorybook);
+    itemList.appendChild(itemLinkDemo);
     itemList.appendChild(itemListContent);
     listDemos.appendChild(itemList);
   });
