@@ -115,7 +115,7 @@ class Slides {
       setTextContent(cloneTemplate)(classRepository.stars, repository.stargazers_count);
 
       const cloneMore = cloneTemplate.querySelector(`.${classRepository.more}`);
-      cloneMore.setAttribute('href', repository.homepage);
+      cloneMore.setAttribute('href', repository.html_url);
 
       this.slidesNode.appendChild(cloneTemplate);
       return cloneTemplate;
