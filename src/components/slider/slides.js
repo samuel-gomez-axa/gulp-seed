@@ -56,7 +56,7 @@ const addDemosLinkForToolkitReact = (tags, cloneTemplate) => {
     const itemLinkDemo = createLink(
       'Demo',
       'See Demo',
-      `https://axaguildev.github.io/react-toolkit/${tagName}/demo/index.html`,
+      `https://axaguildev.github.io/react-toolkit/${tagName}/demo/`,
     );
     const itemListContent = document.createTextNode(`[${tag.name}]`);
     itemList.appendChild(itemLinkDesignSystem);
@@ -97,7 +97,7 @@ class Slides {
   }
 
   addRepos() {
-    return this.repositories.map(async (repository) => {
+    return this.repositories.map(async repository => {
       const cloneTemplate = document.importNode(this.template.content, true);
 
       setTextContent(cloneTemplate)(classRepository.description, repository.description);
