@@ -1,21 +1,15 @@
 {
   "items": [
     {
-      "label": "Axa Web Center",
-      "href": "https://www.axawebcenter.fr/",
-      "title": "Axa Web Center",
-      "target": "_blank"
-    },
-    {
-      "label": "Github",
+      "label": "Github AxaGuilDev",
       "href": "https://github.com/AxaGuilDEv",
-      "title": "Axa Open Source",
+      "title": "Axa Open Source AxaGuilDEv",
       "target": "_blank"
     },
     {
-      "label": "Blog",
-      "href": "https://blog.axawebcenter.fr/",
-      "title": "Blog Axa Web Center",
+      "label": "Github AxaGroup",
+      "href": "https://github.com/axa-group",
+      "title": "Axa Open Source AxaGroup",
       "target": "_blank"
     }
   ]
