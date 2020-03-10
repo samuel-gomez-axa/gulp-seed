@@ -1,0 +1,23 @@
+@import "../../templates/variables";
+
+.#{$prefix} {
+  &-doc-links-nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3rem;
+    &__link {
+      padding: 1rem 2rem;
+      border: 1px solid $gray-600;
+      border-radius: 30px;
+      transition: all 0.5s linear;
+      text-decoration: none;
+      margin: 2rem;
+      &:hover,
+      &:focus {
+        background: $color-blue-light;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
