@@ -1,77 +1,77 @@
+@import "../../templates/variables";
+
 .#{$prefix} {
-  &-icon {
-    &--close {
-      display: none;
-    }
-  }
-  &-menu {
+  &-nav {
     &__list {
-      display: none;
-      flex-direction: column;
-      list-style: none;
-      height: 100%;
-      width: 100%;
-      padding: 0;
       margin: 0;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      font-size: 1.4rem;
     }
     &__item {
-      margin: 0.5em 0;
-      &-link {
-        color: $white;
-        text-decoration: none;
-        letter-spacing: -1px;
-        &:hover {
-          text-decoration: underline;
-        }
+      margin-left: 2rem;
+    }
+    &__link {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        color: $color-blue-light;
+      }
+      &--active {
+        color: $color-blue-light;
       }
     }
-    &--opened {
-      position: fixed;
-      @include position();
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 10;
-      height: 100vh;
-      width: 100vw;
-      font: normal normal 600 2rem/2rem $font-family-headings;
-      text-align: center;
-      .#{$prefix} {
-        &-menu {
-          &__list {
-            display: flex;
-          }
-        }
-        &-icon {
-          &--close {
-            display: initial;
-            margin-top: 1em;
-          }
-          &--menu-button {
-            display: none;
-          }
-        }
-      }
+    &__toggle {
+      display: none;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
     }
   }
 }
 
-@media screen and (min-width: 640px) {
+@include respond-to("tiny") {
   .#{$prefix} {
-    &-menu {
+    &-nav {
       &__list {
-        flex-direction: initial;
-        font-size: 0.7rem;
-        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: none;
       }
       &__item {
-        margin: 0 0.6em 0 0;
+        margin: 0;
+        padding: 2rem;
       }
-    }
-    &-icon {
-      &--close {
-        display: none;
+      &__link {
+        font-size: 5rem;
+        color: white;
+        font-weight: 500;
+        letter-spacing: -3px;
+        &:hover,
+        &:focus {
+          color: white;
+        }
       }
-      &--menu-button {
-        display: none;
+      &__toggle {
+        display: block;
+      }
+      &--opened {
+        top: 0;
+        left: 0;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: $color-blue-light;
+        padding-top: 5rem;
+        .#{$prefix}-nav__list {
+          display: block;
+        }
+        .#{$prefix}-nav__toggle {
+          position: absolute;
+          right: 2rem;
+          top: 2rem;
+        }
       }
     }
   }
