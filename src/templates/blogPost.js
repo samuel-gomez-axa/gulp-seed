@@ -38,11 +38,7 @@ const Article = ({
           <GithubIcon className={`${PREFIX}-post__github-icon`} />
         </a>
       )}
-      <img
-        className={`${PREFIX}-post__avatar`}
-        src={`../../repos/logo-${name}.svg`}
-        alt={name}
-      />
+      <img className={`${PREFIX}-post__avatar`} src={`../../repos/logo-${name}.svg`} alt={name} />
       {stars && (
         <span className={`${PREFIX}-post__stars`}>
           <StarIcon className={`${PREFIX}-post__star-icon`} />
@@ -54,18 +50,12 @@ const Article = ({
     <div dangerouslySetInnerHTML={{ __html: html }} />
     <nav className={`${PREFIX}-footer-nav`}>
       {prev && (
-        <Link
-          className={`${PREFIX}-footer-nav__link`}
-          to={`${lang}${prev.frontmatter.path}`}
-        >
+        <Link className={`${PREFIX}-footer-nav__link`} to={`${lang}${prev.frontmatter.path}`}>
           {prev.frontmatter.title}
         </Link>
       )}
       {next && (
-        <Link
-          className={`${PREFIX}-footer-nav__link`}
-          to={`${lang}${next.frontmatter.path}`}
-        >
+        <Link className={`${PREFIX}-footer-nav__link`} to={`${lang}${next.frontmatter.path}`}>
           {next.frontmatter.title}
         </Link>
       )}

@@ -21,3 +21,16 @@
     }
   }
 }
+
+@include respond-to("tiny") {
+  .#{$prefix} {
+    &-doc-links-nav {
+      margin: 1rem 1rem 2rem 1rem;
+      &__link {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        padding: 0.5rem 0.9rem;
+      }
+    }
+  }
+}
