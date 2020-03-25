@@ -16,7 +16,7 @@ meta: {
   <img class="af-post__img af-post__img--left" src="../../guildevopen.jpg" alt="Static Website Guidevopen" />
   <article class="af-post__article af-post__article--left">
     <h2 class="af-post__subtitle af-post__subtitle--left">Code source du site Guildevopen</h2>
-    <p class="af-post__content">Ce site permet de mettre en avant les projets Open Source chez Axa. Le but étant de promouvoir l'Open Source et de rendre plus visibles le travail des centaines de passionnés travaillants au WebCenter d'Axa France.</p>
+    <p class="af-post__content">Ce site permet de mettre en avant les projets Open Source chez Axa. Le but étant de promouvoir l'Open Source et de rendre plus visibles le travail des centaines de passionnés travaillant au WebCenter d'Axa France.</p>
   </article>
 </section>
 

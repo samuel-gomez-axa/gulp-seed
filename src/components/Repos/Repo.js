@@ -6,20 +6,11 @@ import StarIcon from "../../../static/star.svg"
 import "./repo.scss"
 import { isNull } from "lodash"
 
-const Repo = ({
-  name,
-  description,
-  stargazers_count,
-  html_url,
-  lang,
-  title,
-}) => (
+const Repo = ({ name, description, stargazers_count, html_url, lang, title }) => (
   <article className={`${PREFIX}-repo`}>
-    <img
-      className={`${PREFIX}-repo__avatar`}
-      src={`repos/logo-${name}.svg`}
-      alt={name}
-    />
+    <Link className={`${PREFIX}-repo__link ${PREFIX}-repo__link--avatar`} to={`${lang}/${name}`}>
+      <img className={`${PREFIX}-repo__avatar`} src={`repos/logo-${name}.svg`} alt={name} />
+    </Link>
     <div className={`${PREFIX}-repo__content`}>
       <h2 className={`${PREFIX}-repo__title`}>{title}</h2>
       <p className={`${PREFIX}-repo__description`}>{description}</p>
@@ -71,9 +62,7 @@ const RepoEnhanced = props => {
 
   const cleanedName = setCleanName({ name })
   const croppedDescription = setCropDescription({ description })
-  return (
-    <Repo {...props} description={croppedDescription} title={cleanedName} />
-  )
+  return <Repo {...props} description={croppedDescription} title={cleanedName} />
 }
 
 RepoEnhanced.propTypes = {

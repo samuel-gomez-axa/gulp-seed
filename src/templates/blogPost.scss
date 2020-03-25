@@ -35,24 +35,29 @@
     }
     &__github-link {
       position: fixed;
-      right: -10px;
+      right: 0;
       top: 60px;
-      z-index: 3;
-      margin-right: 1rem;
-      height: 0;
-      width: 0;
-      display: inline-table;
-      border-top: 100px solid $color-blue-dark;
-      border-left: 100px solid transparent;
+      z-index: 5;
+      width: 100px;
+      height: 100px;
+      &::before {
+        right: 0;
+        position: absolute;
+        content: "";
+        height: 0;
+        width: 0;
+        border-top: 100px solid $color-blue-dark;
+        border-left: 100px solid transparent;
+      }
     }
     &__github-icon {
       position: absolute;
       top: 10px;
       right: 10px;
-      z-index: 2;
-      fill: white;
+      z-index: 20;
       width: 40px;
       height: 40px;
+      fill: white;
       transform: rotate(45deg);
     }
     &__section {
@@ -193,6 +198,18 @@
       }
       &__article {
         order: 2;
+      }
+    }
+    &-footer-nav {
+      margin: 1rem 1rem 2rem 1rem;
+      &__link {
+        max-width: 40%;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        padding: 0.5rem 0.9rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
       }
     }
   }
