@@ -49,19 +49,10 @@ const MenuView = props => (
           Blog
         </a>
       </li>
-      {/*  <li className={`${PREFIX}-nav__item`}>
-        <Link
-          className={`${PREFIX}-nav__link`}
-          to="/blog"
-          activeClassName={`${PREFIX}-nav__link--active`}
-        >
-          Blog
-        </Link>
-      </li> */}
       <li className={`${PREFIX}-nav__item`}>
         <a
           className={`${PREFIX}-nav__link`}
-          href="https://github.com/AxaGuilDEv"
+          href="https://github.com/AxaFrance"
           title="Github GuilDevOpen"
           target="blank"
         >
@@ -78,16 +69,6 @@ const MenuView = props => (
           Axa Group
         </a>
       </li>
-      {/* <li className={`${PREFIX}-nav__item`}>
-        <a
-          className={`${PREFIX}-nav__link`}
-          href="https://medium.com/just-tech-it-now"
-          title="Blog Just Tech IT"
-          target="blank"
-        >
-          Blog
-        </a>
-      </li> */}
     </ul>
   </nav>
 )

@@ -5,17 +5,10 @@ import "./DocLinks.scss"
 
 const DocLinks = ({ onChange, options, stateSelect: { value } }) => (
   <>
-    <Select
-      name="releases"
-      id="releases"
-      onChange={onChange}
-      options={options}
-      value={value}
-    />
     <nav className={`${PREFIX}-doc-links-nav`}>
       <a
         className={`${PREFIX}-doc-links-nav__link`}
-        href={`https://axaguildev.github.io/react-toolkit/${value}/design/index.html`}
+        href={`https://axafrance.github.io/site-slash/`}
         title="Design System"
         target="blank"
       >
@@ -23,19 +16,11 @@ const DocLinks = ({ onChange, options, stateSelect: { value } }) => (
       </a>
       <a
         className={`${PREFIX}-doc-links-nav__link`}
-        href={`https://axaguildev.github.io/react-toolkit/${value}/storybook/index.html?path=/story/get-started--introduction`}
+        href={`https://axafrance.github.io/react-toolkit/latest/storybook/`}
         title="Storybook"
         target="blank"
       >
         Storybook
-      </a>
-      <a
-        className={`${PREFIX}-doc-links-nav__link`}
-        href={`https://axaguildev.github.io/react-toolkit/${value}/demo/`}
-        title="Démo"
-        target="blank"
-      >
-        Démo
       </a>
     </nav>
   </>

@@ -10,16 +10,16 @@ try {
 
   const execSync = require("child_process").execSync
   let child = execSync(
-    `git clone https://toto:${GITHUB_TOKEN}@github.com/AxaGuilDEv/AxaGuilDEv.github.io ./tmp/AxaGuilDEv.github.io/`
+    `git clone https://toto:${GITHUB_TOKEN}@github.com/AxaGuilDEv/axafrance.github.io ./tmp/axafrance.github.io/`
   )
   console.log("error", child.error)
   console.log("stdout ", child.stdout)
   console.log("stderr ", child.stderr)
 
-  fs.copySync(`./public`, `./tmp/AxaGuilDEv.github.io/`)
+  fs.copySync(`./public`, `./tmp/axafrance.github.io/`)
 
   child = execSync(
-    `cd ./tmp/AxaGuilDEv.github.io/ && git add . && git commit -m "static Website AxaGuildev publish" && git push`
+    `cd ./tmp/axafrance.github.io/ && git add . && git commit -m "static Website axafrance publish" && git push`
   )
   console.log("error", child.error)
   console.log("stdout ", child.stdout)

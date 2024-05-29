@@ -37,9 +37,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AxaGuilDEv/static-website-axaguildev.git"
+    "url": "git+https://github.com/axafrance/static-website-axaguildev.git"
   },
   "bugs": {
-    "url": "https://github.com/AxaGuilDEv/static-website-axaguildev/issues"
+    "url": "https://github.com/axafrance/static-website-axaguildev/issues"
   }
 }
