@@ -18,9 +18,7 @@ const processRepo = (createNodeId, createContentDigest) => repo => {
 }
 
 const apiRepos = secretApp =>
-  `https://api.github.com/users/axaguildev/repos?${secretApp}`
-
-// const apiByType = secretApp => repo => type => `https://api.github.com/repos/AxaGuilDEv/${repo}/${type}?${secretApp}`
+  `https://api.github.com/users/axafrance/repos?${secretApp}`
 
 const apiRepoTags = (secretApp, tagsUrl) => `${tagsUrl}?${secretApp}`
 
